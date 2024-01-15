@@ -1,0 +1,86 @@
+---
+
+---
+
+<section>
+	<article>
+		<h3>Frontend</h3>
+		<h2 class="name">Langkilde</h2>
+		<h2>Multimediedesigner studerende</h2>
+	</article>
+	<article class="slidein">
+		<h1>Passion</h1>
+		<h1>Simplicity</h1>
+		<h1>Excitment</h1>
+	</article>
+</section>
+
+<style>
+	section {
+		margin-top: 60px;
+		display: flex;
+		gap: 40px;
+	}
+
+	article {
+		display: flex;
+		flex-direction: column;
+		height: 300px;
+		overflow: hidden;
+	}
+
+	article:first-child {
+		justify-content: flex-end;
+	}
+
+	h1 {
+		color: var(--link);
+	}
+
+	h2 {
+		line-height: 45px;
+	}
+
+	h3 {
+		font-weight: normal;
+		margin-bottom: 7px;
+	}
+
+	.name::before {
+		content: 'Nicolai ';
+		color: var(--link);
+	}
+
+	.slidein {
+		line-height: 75px;
+	}
+
+	.slidein h1:first-child {
+		transform: translateX(100%);
+		animation-name: slidein;
+		animation-duration: 1.5s;
+		animation-delay: 0.5s;
+		animation-fill-mode: forwards;
+	}
+	.slidein h1:nth-child(2) {
+		transform: translateX(100%);
+		animation-name: slidein;
+		animation-duration: 1.5s;
+		animation-delay: 0.7s;
+		animation-fill-mode: forwards;
+	}
+
+	.slidein h1:last-child {
+		transform: translateX(100%);
+		animation-name: slidein;
+		animation-duration: 1.5s;
+		animation-delay: 0.9s;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes slidein {
+		100% {
+			transform: translateX(0);
+		}
+	}
+</style>

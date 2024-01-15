@@ -1,0 +1,71 @@
+---
+
+---
+
+<section class="about">
+	<img src="/nicolai.webp" alt="Billede af Nicolai" />
+	<article>
+		<h1>Om</h1>
+		<div>
+			<p>
+				Efter 4 år i Blocs & Walls som event- & salgsleder, besluttede jeg mig for, at der skulle
+				ske noget nyt og valgte at søge ind på MMD på KEA. Jeg har altid haft interesse for design
+				og opbygning af hjemmesider og har også tidligere arbejdet med enkelte elementer af dette.
+			</p>
+			<p>
+				Under min uddannelse har jeg fået stor interesse for Frontend og bruger meget af min fritid
+				på at blive bedre til at kode og sætte mig mere ind i hvad de forskellige systemer og sprog
+				kan. Det en fed følelse at sidde med et problem og som i sidste ende bliver løst.
+			</p>
+			<p>
+				Jeg elsker at være aktiv og sætter stor pris på at være ud og opleve nye ting og få
+				inspiration.
+			</p>
+			<p>
+				Jeg bestræber mig altid på at være en positiv person med godt humør, gå på mod og elsker at
+				lære nye ting samt bruge de ting, som jeg lærer til at blive endnu bedre til det, som jeg
+				brænder for.
+			</p>
+		</div>
+	</article>
+</section>
+
+<style>
+	section {
+		margin-top: 250px;
+		display: flex;
+		gap: 60px;
+		opacity: 0;
+		transition: all 1s;
+	}
+	div {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	h1::after {
+		content: ' mig';
+		color: var(--link);
+	}
+
+	.show {
+		opacity: 100%;
+	}
+</style>
+
+<script>
+	const show = document.querySelector('.about')
+
+	window.onscroll = function () {
+		scrollFunction()
+	}
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+			show.classList.add('show')
+		} else {
+			show.classList.remove('show')
+		}
+	}
+</script>

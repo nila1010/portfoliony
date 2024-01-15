@@ -1,0 +1,28 @@
+---
+const { logo, alt, title, tekst } = Astro.props
+---
+
+<article>
+	<img src={logo} alt={alt} />
+	<h3>{title}</h3>
+	<p>
+		{tekst}
+	</p>
+</article>
+
+<style>
+	article {
+		width: 360px;
+		height: 360px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		border: 1px solid #fff;
+	}
+
+	img {
+		width: 100px;
+		height: 100px;
+	}
+</style>
