@@ -53,19 +53,3 @@
 		opacity: 100%;
 	}
 </style>
-
-<script>
-	const show = document.querySelector('.about')
-
-	window.onscroll = function () {
-		scrollFunction()
-	}
-
-	function scrollFunction() {
-		if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-			show.classList.add('show')
-		} else {
-			show.classList.remove('show')
-		}
-	}
-</script>

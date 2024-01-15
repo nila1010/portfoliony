@@ -47,6 +47,8 @@ import IndholdSkills from './IndholdSkills.astro'
 <style>
 	section {
 		margin-top: 250px;
+		opacity: 0;
+		transition: all 1s;
 	}
 	article {
 		display: flex;
@@ -54,20 +56,8 @@ import IndholdSkills from './IndholdSkills.astro'
 		flex-wrap: wrap;
 		max-width: 1140px;
 	}
+
+	.show {
+		opacity: 100%;
+	}
 </style>
-
-<script>
-	const skills = document.querySelector('.skills')
-
-	window.onscroll = function () {
-		scrollFunctionSkills()
-	}
-
-	function scrollFunctionSkills() {
-		if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
-			skills.classList.add('show')
-		} else {
-			skills.classList.remove('show')
-		}
-	}
-</script>

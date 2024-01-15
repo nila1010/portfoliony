@@ -17,3 +17,26 @@ import Navigation from '../components/Navigation.astro'
 		<footer></footer>
 	</body>
 </html>
+
+<script>
+	const show = document.querySelector('.about')
+	const skills = document.querySelector('.skills')
+
+	window.onscroll = function () {
+		scrollFunction()
+	}
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+			show.classList.add('show')
+		} else {
+			show.classList.remove('show')
+		}
+
+		if (document.body.scrollTop > 1050 || document.documentElement.scrollTop > 1050) {
+			skills.classList.add('show')
+		} else {
+			skills.classList.remove('show')
+		}
+	}
+</script>
