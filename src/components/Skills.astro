@@ -41,20 +41,30 @@ import IndholdSkills from './IndholdSkills.astro'
 			alt="netlify logo"
 			tekst="Kan bruge Netlify til at deploy et site fra GitHub til fremvisning eller teste på forskellige medier. Samt se om forskellige forms på et site virker. "
 		/>
+		<IndholdSkills
+			title="Astro"
+			logo="/logo/astro.svg"
+			alt="Astro logo"
+			tekst="Kendskab til Astro som framework. Forståelse for opsætning af komponenter, props, slots, scoped css, conditional rendering, fetch og mapping. "
+		/>
 	</article>
 </section>
 
 <style>
 	section {
-		margin-top: 250px;
+		margin-top: 150px;
 		opacity: 0;
 		transition: all 1s;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	article {
 		display: flex;
 		gap: 30px;
 		flex-wrap: wrap;
 		max-width: 1140px;
+		margin-top: 30px;
 	}
 
 	.show {

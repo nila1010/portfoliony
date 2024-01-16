@@ -27,16 +27,25 @@ import Navigation from '../components/Navigation.astro'
 	}
 
 	function scrollFunction() {
-		if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+		if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
 			show.classList.add('show')
 		} else {
 			show.classList.remove('show')
 		}
 
-		if (document.body.scrollTop > 1050 || document.documentElement.scrollTop > 1050) {
+		if (document.body.scrollTop > 850 || document.documentElement.scrollTop > 850) {
 			skills.classList.add('show')
 		} else {
 			skills.classList.remove('show')
 		}
+		const element = document.querySelector('.text1')
+		const element2 = document.querySelector('.slidein')
+
+		window.addEventListener('scroll', () => {
+			let value = window.scrollY
+
+			element.style.marginLeft = value * -3.5 + 'px'
+			element2.style.marginLeft = value * 10.5 + 'px'
+		})
 	}
 </script>

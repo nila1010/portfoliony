@@ -44,7 +44,8 @@ body {
 
 main {
 	flex-grow: 1;
-	margin-left: 50px;
+	max-width: 1500px;
+	overflow: hidden;
 }
 
 img {

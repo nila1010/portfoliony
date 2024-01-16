@@ -3,7 +3,7 @@
 ---
 
 <section>
-	<article>
+	<article class="text1">
 		<h3>Frontend</h3>
 		<h2 class="name">Langkilde</h2>
 		<h2>Multimediedesigner studerende</h2>
@@ -17,9 +17,10 @@
 
 <style>
 	section {
-		margin-top: 60px;
+		margin: 60px 0 0 50px;
 		display: flex;
-		gap: 40px;
+		justify-content: left;
+		gap: 240px;
 	}
 
 	article {
@@ -31,6 +32,7 @@
 
 	article:first-child {
 		justify-content: flex-end;
+		min-width: fit-content;
 	}
 
 	h1 {
@@ -53,17 +55,18 @@
 
 	.slidein {
 		line-height: 75px;
+		width: 100%;
 	}
 
 	.slidein h1:first-child {
-		transform: translateX(100%);
+		transform: translateX(200%);
 		animation-name: slidein;
 		animation-duration: 1.5s;
 		animation-delay: 0.5s;
 		animation-fill-mode: forwards;
 	}
 	.slidein h1:nth-child(2) {
-		transform: translateX(100%);
+		transform: translateX(200%);
 		animation-name: slidein;
 		animation-duration: 1.5s;
 		animation-delay: 0.7s;
@@ -71,7 +74,7 @@
 	}
 
 	.slidein h1:last-child {
-		transform: translateX(100%);
+		transform: translateX(200%);
 		animation-name: slidein;
 		animation-duration: 1.5s;
 		animation-delay: 0.9s;
