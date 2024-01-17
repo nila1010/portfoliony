@@ -1,5 +1,6 @@
 ---
 import IndholdSkills from './IndholdSkills.astro'
+import SkillsBar from './SkillsBar.astro'
 ---
 
 <section class="skills">
@@ -47,6 +48,7 @@ import IndholdSkills from './IndholdSkills.astro'
 			alt="Astro logo"
 			tekst="Kendskab til Astro som framework. Forståelse for opsætning af komponenter, props, slots, scoped css, conditional rendering, fetch og mapping. "
 		/>
+		<SkillsBar />
 	</article>
 </section>
 
@@ -54,16 +56,16 @@ import IndholdSkills from './IndholdSkills.astro'
 	section {
 		margin-top: 150px;
 		opacity: 0;
-		transition: all 1s;
+		transition: all 1s linear;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 	}
 	article {
 		display: flex;
+
 		gap: 30px;
 		flex-wrap: wrap;
-		max-width: 1140px;
+
 		margin-top: 30px;
 	}
 

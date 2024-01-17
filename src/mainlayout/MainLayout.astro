@@ -1,6 +1,7 @@
 ---
 import '../styles/mainstyles.css'
 import Navigation from '../components/Navigation.astro'
+import Contact from '../components/Contact.astro'
 ---
 
 <html lang="en">
@@ -14,7 +15,7 @@ import Navigation from '../components/Navigation.astro'
 	<body>
 		<header><Navigation /></header>
 		<main><slot /></main>
-		<footer></footer>
+		<footer><Contact /></footer>
 	</body>
 </html>
 
@@ -33,7 +34,7 @@ import Navigation from '../components/Navigation.astro'
 			show.classList.remove('show')
 		}
 
-		if (document.body.scrollTop > 850 || document.documentElement.scrollTop > 850) {
+		if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
 			skills.classList.add('show')
 		} else {
 			skills.classList.remove('show')
