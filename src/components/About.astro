@@ -2,9 +2,9 @@
 
 ---
 
-<section class="about">
-	<img src="/nicolai.webp" alt="Billede af Nicolai" />
-	<article>
+<section>
+	<img class="aboutimg" src="/nicolai.webp" alt="Billede af Nicolai" />
+	<article class="abouttekst">
 		<h1>Om</h1>
 		<div>
 			<p>
@@ -36,7 +36,7 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 60px;
-		opacity: 0;
+
 		transition: all 1s linear;
 	}
 	div {
@@ -50,7 +50,22 @@
 		color: var(--link);
 	}
 
+	img {
+		opacity: 0;
+		transition: all 0.5s ease-out;
+	}
+
+	article {
+		transform: translateX(100%);
+		transition: all 0.5s ease-out;
+	}
+
 	.show {
 		opacity: 100%;
+		transition: all 0.5s ease-out;
+	}
+	.slidein {
+		transform: translateX(0);
+		transition: all 0.5s ease-out;
 	}
 </style>

@@ -2,153 +2,143 @@
 import Button from './Button.astro'
 ---
 
-<section class="container">
+<article class="portfolio">
 	<h1>Portfolio</h1>
-	<article class="tab-container">
-		<div class="tab-filter-container">
-			<li class="filter-btn active" data-tab="ux-copenhagen">UX Copenhagen</li>
-			<li class="filter-btn" data-tab="the-barking-dog">The Barking Dog</li>
-			<li class="filter-btn" data-tab="decore-hair">Decore Hair</li>
-			<li class="filter-btn" data-tab="ca-akasse">CA Akasse</li>
-			<li class="filter-btn" data-tab="spotify">Spotify</li>
-			<li class="filter-btn" data-tab="1.sem-eksamen">1.sem eksamen</li>
-		</div>
-		<div class="tab-filter-item-container">
-			<div class="tab-item ux-copenhagen select_tab">
-				<div class="text">
-					<div class="btn">
-						<Button link="/#" tekst="Se sitet" /><Button link="/#" tekst="Github" />
-					</div>
-					<div>
-						<p>
-							Redesign opgave af UX Copenhagen, som er kodet vha. Astro og har haft fokus på simpelt
-							layout som giver et professionelt udtryk, samt et brugervenligt UX flow.
-						</p>
-					</div>
-				</div>
-				<video src="/video/uxcph.mov"></video>
+	<div class="container">
+		<div class="tab-container">
+			<div class="tab-filter-container">
+				<li class="filter-btn active" data-tab="ux-cph">UX Copenhagen</li>
+				<li class="filter-btn" data-tab="tbd">The Barking Dog</li>
+				<li class="filter-btn" data-tab="dh">Decore Hair</li>
+				<li class="filter-btn" data-tab="ca">CA Akasse</li>
 			</div>
 			<div class="tab-filter-item-container">
-				<div class="tab-item ux-copenhagen select_tab">
-					<div class="text">
-						<div class="btn">
-							<Button link="/#" tekst="Se sitet" /><Button link="/#" tekst="Github" />
-						</div>
-						<div>
-							<p>
-								Redesign opgave af UX Copenhagen, som er kodet vha. Astro og har haft fokus på
-								simpelt layout som giver et professionelt udtryk, samt et brugervenligt UX flow.
-							</p>
-						</div>
+				<div class="tab-item ux-cph select_tab">
+					<div>
+						<Button tekst="Se sitet" />
+						<Button tekst="GitHub" />
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
+							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
+							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
+						</p>
 					</div>
 					<video src="/video/uxcph.mov"></video>
 				</div>
-				<div class="tab-item ux-copenhagen select_tab">
-					<div class="text">
-						<div class="btn">
-							<Button link="/#" tekst="Se sitet" /><Button link="/#" tekst="Github" />
-						</div>
-						<div>
-							<p>
-								Redesign opgave af UX Copenhagen, som er kodet vha. Astro og har haft fokus på
-								simpelt layout som giver et professionelt udtryk, samt et brugervenligt UX flow.
-							</p>
-						</div>
+				<div class="tab-item tbd">
+					<div>
+						<Button tekst="Se sitet" />
+						<Button tekst="GitHub" />
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
+							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
+							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
+						</p>
+					</div>
+					<video src="/video/uxcph.mov"></video>
+				</div>
+				<div class="tab-item dh">
+					<div>
+						<Button tekst="Se sitet" />
+						<Button tekst="GitHub" />
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
+							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
+							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
+						</p>
+					</div>
+					<video src="/video/uxcph.mov"></video>
+				</div>
+				<div class="tab-item ca">
+					<div>
+						<Button tekst="Se sitet" />
+						<Button tekst="GitHub" />
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
+							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
+							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
+						</p>
 					</div>
 					<video src="/video/uxcph.mov"></video>
 				</div>
 			</div>
 		</div>
-	</article>
-	<style>
-		section {
-			margin-top: 150px;
-		}
+	</div>
+</article>
+<style>
+	article {
+		margin-top: 150px;
+		transform: rotateY(180deg);
+		backface-visibility: hidden;
+		transition: all 1s ease-out;
+	}
 
-		h1 {
-			margin-bottom: 1rem;
-			text-align: center;
-		}
-		.btn {
-			width: 200px;
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
-		}
+	.flip {
+		transition: all 1s ease-out;
+		transform: rotateY(0);
+	}
+	.container {
+		margin-top: 30px;
+	}
+	.tab-filter-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-		.text {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-		.tab-filter-container {
-			display: flex;
-			flex-wrap: wrap;
-		}
+	.filter-btn {
+		margin-left: 1px;
+		outline: 1px solid #fff;
+		color: white;
+		display: flex;
+		padding: 0.8rem 2.5rem;
+		cursor: pointer;
+	}
+	.filter-btn.active {
+		background-color: var(--link);
+		color: white;
+	}
+	.tab-filter-item-container {
+		border: 1px solid #fff;
+		position: relative;
+		overflow: hidden;
+	}
+	.tab-item {
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		gap: 50px;
+		padding: 50px;
+		width: 100%;
+		height: 480px;
+		position: absolute;
+		transform: translateY(120%);
+		transition: transform 0.5s ease-in-out;
+	}
 
-		.filter-btn {
-			background-color: var(--background-color-light);
-			border: 1px solid white;
-			display: flex;
-			padding: 0.8rem 2.5rem;
-			color: white;
-			cursor: pointer;
-		}
-		.filter-btn.active {
-			background: var(--link);
-			color: white;
-		}
-		.tab-filter-item-container {
-			background-color: var(--background-color-light);
-			position: relative;
-			overflow: hidden;
-		}
-		.tab-item {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			place-content: center;
-			gap: 50px;
-			border: 1px solid white;
-			padding: 50px;
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			transform: translateY(100%);
-			transition: transform 0.5s ease-in-out;
-		}
+	.tab-item.select_tab {
+		transform: translateY(0);
+		transition: transform 0.5s ease-in-out;
+	}
+</style>
 
-		.tab-item.select_tab {
-			transform: translateY(0);
-			transition: transform 0.5s ease-in-out;
-		}
-	</style>
+<script>
+	const filter_btn = document.querySelectorAll('.filter-btn')
+	const tab_items = document.querySelectorAll('.tab-item')
+	const tabContainer = document.querySelector('.tab-filter-item-container')
 
-	<script>
-		const filter_btn = document.querySelectorAll('.filter-btn')
-		const tab_items = document.querySelectorAll('.tab-item')
-		const tabContainer = document.querySelector('.tab-filter-item-container')
+	filter_btn.forEach((button) => {
+		button.addEventListener('click', () => {
+			filter_btn.forEach((btn) => btn.classList.remove('active'))
+			const select_tab = button.getAttribute('data-tab')
+			button.classList.add('active')
 
-		//Først laver vi et loop for hver knap og fjerne class active for at resette, derefter går vi ind og
-		//tager value og data tab for den knap vi har klikket på og gemmer den i selected tab, hvorefter vi adder
-		//active til knappen.
-		filter_btn.forEach((button) => {
-			button.addEventListener('click', () => {
-				filter_btn.forEach((btn) => btn.classList.remove('active'))
-				const select_tab = button.getAttribute('data-tab')
-				button.classList.add('active')
-
-				//Så laver vi et loop for hver tab og sætter højden så den matcher content.
-				//Derefter toggler vi selected tab class hvis den pågældende tab indeholder værdien der matcher
-				// constanten selected tab
-				tab_items.forEach((tab) => {
-					tabContainer.style.height = tab.scrollHeight + 'px'
-					tab.classList.toggle('select_tab', tab.classList.contains(select_tab))
-				})
+			tab_items.forEach((tab) => {
+				tabContainer.style.height = tab.scrollHeight + 'px'
+				tab.classList.toggle('select_tab', tab.classList.contains(select_tab))
 			})
 		})
-		// her laver vi et loop som sørger for content bliver vist ved start
-		tab_items.forEach((tab) => {
-			tabContainer.style.height = tab.scrollHeight + 'px'
-		})
-	</script>
-</section>
+	})
+
+	tab_items.forEach((tab) => {
+		tabContainer.style.height = tab.scrollHeight + 'px'
+	})
+</script>

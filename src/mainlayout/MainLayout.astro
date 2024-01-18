@@ -20,8 +20,10 @@ import Contact from '../components/Contact.astro'
 </html>
 
 <script>
-	const show = document.querySelector('.about')
+	const aboutimg = document.querySelector('.aboutimg')
+	const abouttekst = document.querySelector('.abouttekst')
 	const skills = document.querySelector('.skills')
+	const port = document.querySelector('.portfolio')
 
 	window.onscroll = function () {
 		scrollFunction()
@@ -29,9 +31,11 @@ import Contact from '../components/Contact.astro'
 
 	function scrollFunction() {
 		if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-			show.classList.add('show')
+			aboutimg.classList.add('show')
+			abouttekst.classList.add('slidein')
 		} else {
-			show.classList.remove('show')
+			aboutimg.classList.remove('show')
+			abouttekst.classList.remove('slidein')
 		}
 
 		if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
@@ -39,14 +43,20 @@ import Contact from '../components/Contact.astro'
 		} else {
 			skills.classList.remove('show')
 		}
-		const element = document.querySelector('.text1')
-		const element2 = document.querySelector('.slidein')
+
+		if (document.body.scrollTop > 2350 || document.documentElement.scrollTop > 2350) {
+			port.classList.add('flip')
+		} else {
+			port.classList.remove('flip')
+		}
+		const element = document.querySelector('.introtekst')
+		const element2 = document.querySelector('.introwords')
 
 		window.addEventListener('scroll', () => {
 			let value = window.scrollY
 
-			element.style.marginLeft = value * -3.5 + 'px'
-			element2.style.marginLeft = value * 10.5 + 'px'
+			element.style.translate = -value + '%'
+			element2.style.translate = value + '%'
 		})
 	}
 </script>
