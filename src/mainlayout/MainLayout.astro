@@ -22,43 +22,64 @@ import Contact from '../components/Contact.astro'
 <style></style>
 
 <script>
+	const intro = document.querySelector('.about')
 	const aboutimg = document.querySelector('.aboutimg')
 	const abouttekst = document.querySelector('.abouttekst')
 	const skills = document.querySelector('.skills')
 	const port = document.querySelector('.portfolio')
 
-	window.onscroll = function () {
-		scrollFunction()
+	const element = document.querySelector('.introtekst')
+	const element2 = document.querySelector('.introwords')
+
+	window.addEventListener('scroll', () => {
+		let value = window.scrollY
+
+		element.style.translate = -value / 3 + '%'
+		element2.style.translate = value / 3 + '%'
+	})
+
+	let options = {
+		threshold: 0.4
+	}
+	let observer = new IntersectionObserver(flip, options)
+
+	observer.observe(port)
+
+	function flip(entries) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				port.classList.add('flip')
+			} else port.classList.remove('flip')
+		})
 	}
 
-	function scrollFunction() {
-		if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-			aboutimg.classList.add('show')
-			abouttekst.classList.add('slidetext')
-		} else {
-			aboutimg.classList.remove('show')
-			abouttekst.classList.remove('slidetext')
-		}
+	let observer2 = new IntersectionObserver(slide, options)
 
-		if (document.body.scrollTop > 850 || document.documentElement.scrollTop > 850) {
-			skills.classList.add('show')
-		} else {
-			skills.classList.remove('show')
-		}
+	observer2.observe(intro)
 
-		if (document.body.scrollTop > 2150 || document.documentElement.scrollTop > 2150) {
-			port.classList.add('flip')
-		} else {
-			port.classList.remove('flip')
-		}
-		const element = document.querySelector('.introtekst')
-		const element2 = document.querySelector('.introwords')
+	function slide(entries) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				aboutimg.classList.add('show')
+				abouttekst.classList.add('slidetext')
+			} else {
+				aboutimg.classList.remove('show')
+				abouttekst.classList.remove('slidetext')
+			}
+		})
+	}
 
-		window.addEventListener('scroll', () => {
-			let value = window.scrollY
+	let observer3 = new IntersectionObserver(show, options)
 
-			element.style.translate = -value / 3 + '%'
-			element2.style.translate = value / 3 + '%'
+	observer3.observe(skills)
+
+	function show(entries) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				skills.classList.add('show')
+			} else {
+				skills.classList.remove('show')
+			}
 		})
 	}
 </script>
