@@ -6,10 +6,36 @@ const { link, tekst } = Astro.props
 
 <style>
 	a {
-		padding: 10px 40px;
+		padding: 5px 30px;
 		background-color: var(--link);
 		color: #fff;
 		border-radius: 10px;
 		text-align: center;
+		width: 100%;
+		transition: all 0.3s;
+	}
+
+	a:hover {
+		color: var(--link);
+		background-color: #fff;
+	}
+
+	@media (max-width: 500px) {
+		a {
+			font-size: 20px;
+			padding: 5px 20px;
+		}
+	}
+
+	@media (max-width: 405px) {
+		a {
+			font-size: 16px;
+		}
+	}
+
+	@media (max-width: 380px) {
+		a {
+			padding: 5px 20px;
+		}
 	}
 </style>

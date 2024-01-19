@@ -2,157 +2,149 @@
 import Button from './Button.astro'
 ---
 
-<article class="portfolio">
+<section>
 	<h1>Portfolio</h1>
-	<div class="container1">
-		<div class="tab-container">
-			<div class="tab-filter-container">
-				<li class="filter-btn active" data-tab="ux-cph">UX Copenhagen</li>
-				<li class="filter-btn" data-tab="tbd">The Barking Dog</li>
-				<li class="filter-btn" data-tab="dh">Decore Hair</li>
-				<li class="filter-btn" data-tab="ca">CA Akasse</li>
-			</div>
-			<div class="tab-filter-item-container">
-				<div class="tab-item ux-cph select_tab">
-					<div>
-						<div class="knapper">
-							<Button tekst="Se sitet" />
-							<Button tekst="GitHub" />
-						</div>
-						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
-							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
-							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
-						</p>
-					</div>
-					<video src="/video/uxcph.mov"></video>
-				</div>
-				<div class="tab-item tbd">
-					<div>
-						<Button tekst="Se sitet" />
-						<Button tekst="GitHub" />
-						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
-							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
-							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
-						</p>
-					</div>
-					<video src="/video/uxcph.mov"></video>
-				</div>
-				<div class="tab-item dh">
-					<div class="knapper">
-						<Button tekst="Se sitet" />
-						<Button tekst="GitHub" />
-						<p class="tekst">
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
-							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
-							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
-						</p>
-					</div>
-					<video src="/video/uxcph.mov"></video>
-				</div>
-				<div class="tab-item ca">
-					<div>
-						<Button tekst="Se sitet" />
-						<Button tekst="GitHub" />
-						<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
-							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
-							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
-						</p>
-					</div>
-					<video src="/video/uxcph.mov"></video>
-				</div>
-			</div>
-		</div>
+	<div class="tabcontainer">
+		<h3 class="tabs active" data-tab="ux">UX Copenhagen</h3>
+		<h3 class="tabs" data-tab="tbd">The Barking Dog</h3>
+		<h3 class="tabs" data-tab="dh">Decore Hair</h3>
+		<h3 class="tabs" data-tab="ca">CA Akasse</h3>
+		<h3 class="tabs" data-tab="spot">Spotify</h3>
 	</div>
-</article>
+	<article>
+		<div class="tabindhold ux selected">
+			<div class="indhold">
+				<div class="knapper">
+					<Button link="/sitelink" tekst="Se sitet" />
+					<Button link="/gitlink" tekst="GitHub" />
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laboriosam cumque,
+					asperiores repudiandae non nihil similique, pariatur quia magnam deleniti facilis,
+					accusantium iusto voluptas accusamus nesciunt molestias reprehenderit impedit enim.
+				</p>
+			</div>
+			<video src="/video/uxcph.mov"></video>
+		</div>
+		<div class="tabindhold tbd">
+			<div class="indhold">
+				<div class="knapper">
+					<Button link="/sitelink" tekst="Se sitet" />
+					<Button link="/gitlink" tekst="GitHub" />
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laboriosam cumque,
+					asperiores repudiandae non nihil similique, pariatur quia magnam deleniti facilis,
+					accusantium iusto voluptas accusamus nesciunt molestias reprehenderit impedit enim.
+				</p>
+			</div>
+			<video src="/video/uxcph.mov"></video>
+		</div>
+	</article>
+</section>
+
 <style>
-	article {
-		margin-top: 150px;
-		transform: rotateY(180deg);
-		backface-visibility: hidden;
-		transition: all 1s ease-out;
-		width: 100%;
-	}
-	.knapper {
-		display: flex;
-		width: fit-content;
-		gap: 15px;
+	section {
+		margin-top: 100px;
 	}
 
-	.flip {
-		transition: all 1s ease-out;
-		transform: rotateY(0);
-	}
-	.container1 {
-		margin-top: 30px;
-		min-width: 100%;
-	}
-	.tab-filter-container {
+	.tabcontainer {
 		display: flex;
+		align-items: center;
 		flex-wrap: wrap;
+		margin-top: 30px;
 	}
-
-	.filter-btn {
-		justify-content: center;
+	.tabs {
+		border: 1px solid #fff;
 		flex-grow: 1;
-		margin-left: 1px;
-		outline: 1px solid #fff;
-		color: white;
-		display: flex;
-		padding: 0.8rem 2.5rem;
+		text-align: center;
+		font-weight: normal;
+		font-size: 25px;
+		padding: 5px 25px;
 		cursor: pointer;
 	}
-	.filter-btn.active {
-		background-color: var(--link);
-		color: white;
-	}
-	.tab-filter-item-container {
+
+	article {
 		border: 1px solid #fff;
+		height: 550px;
 		position: relative;
 		overflow: hidden;
-		min-height: 400px;
 	}
-	.tab-item {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 50px;
-		padding: 50px;
+	.tabindhold {
+		position: absolute;
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		gap: 20px;
+		padding: 40px;
 		width: 100%;
 		height: 100%;
-		position: absolute;
-		transform: translateY(120%);
-		transition: transform 0.5s ease-in-out;
+		place-items: center;
+		transform: translateY(100%);
+		transition: all 0.5s ease-out;
 	}
 
-	.tab-item p {
-		justify-self: center;
+	.indhold {
+		display: flex;
+		gap: 20px;
+		flex-direction: column;
+		justify-content: flex-end;
+		height: 100%;
 	}
 
-	video {
-		max-width: 30%;
+	.knapper {
+		display: flex;
+		max-width: fit-content;
+		flex-direction: column;
+		gap: 20px;
 	}
 
-	.tab-item.select_tab {
+	.selected {
 		transform: translateY(0);
-		transition: transform 0.5s ease-in-out;
+	}
+
+	.active {
+		background-color: var(--link);
+	}
+
+	@media (max-width: 850px) {
+		.tabindhold {
+			grid-template-columns: 1fr;
+			place-items: start;
+		}
+		.indhold {
+			justify-content: flex-start;
+		}
+		article {
+			height: 650px;
+		}
+
+		.knapper {
+			order: 2;
+			flex-direction: row;
+			max-width: 100%;
+		}
+	}
+
+	@media (max-width: 600px) {
+		article {
+			height: 550px;
+		}
 	}
 </style>
 
 <script>
-	const filter_btn = document.querySelectorAll('.filter-btn')
-	const tab_items = document.querySelectorAll('.tab-item')
-	const tabContainer = document.querySelector('.tab-filter-item-container')
+	const tabs = document.querySelectorAll('.tabs')
+	const tabIndhold = document.querySelectorAll('.tabindhold')
+	const container = document.querySelector('article')
 
-	filter_btn.forEach((button) => {
+	tabs.forEach((button) => {
 		button.addEventListener('click', () => {
-			filter_btn.forEach((btn) => btn.classList.remove('active'))
+			tabs.forEach((btn) => btn.classList.remove('active'))
 			const select_tab = button.getAttribute('data-tab')
 			button.classList.add('active')
 
-			tab_items.forEach((tab) => {
-				tab.classList.toggle('select_tab', tab.classList.contains(select_tab))
+			tabIndhold.forEach((indhold) => {
+				indhold.classList.toggle('selected', indhold.classList.contains(select_tab))
 			})
 		})
 	})
