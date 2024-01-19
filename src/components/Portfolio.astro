@@ -2,7 +2,7 @@
 import Button from './Button.astro'
 ---
 
-<section>
+<section class="portfolio">
 	<h1>Portfolio</h1>
 	<div class="tabcontainer">
 		<h3 class="tabs active" data-tab="ux">UX Copenhagen</h3>
@@ -46,6 +46,13 @@ import Button from './Button.astro'
 <style>
 	section {
 		margin-top: 100px;
+		transform: rotateY(180deg);
+		backface-visibility: hidden;
+	}
+
+	.flip {
+		transition: all 1s ease-out;
+		transform: rotateY(0);
 	}
 
 	.tabcontainer {
