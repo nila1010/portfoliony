@@ -7,11 +7,11 @@ import Button from './Button.astro'
 	<div class="container">
 		<div class="containerinfo">
 			<img src="/logo/phone.svg" alt="Phone logo" />
-			<p>31 25 58 28</p>
+			<p class="kontakt">31 25 58 28</p>
 		</div>
 		<div class="containerinfo">
 			<img src="/logo/mail.svg" alt="E-mail logo" />
-			<p>Nicolai@langkilde.dk</p>
+			<a class="kontakt" href="mailto:nicolai@langkilde.dk">Nicolai@langkilde.dk</a>
 		</div>
 	</div>
 	<Button link="/#" tekst="SE CV" />
@@ -20,12 +20,18 @@ import Button from './Button.astro'
 		section {
 			display: flex;
 			flex-direction: column;
+			width: fit-content;
 			margin: 150px 0 50px 50px;
 			gap: 30px;
 		}
 		img {
 			width: 50px;
 			height: 50px;
+		}
+
+		.kontakt {
+			font-size: 20px;
+			font-weight: normal;
 		}
 		.container {
 			display: flex;
@@ -37,6 +43,12 @@ import Button from './Button.astro'
 			display: flex;
 			align-items: center;
 			gap: 20px;
+		}
+
+		@media (max-width: 696px) {
+			section {
+				margin: 100px auto 100px auto;
+			}
 		}
 	</style>
 </section>

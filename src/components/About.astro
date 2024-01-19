@@ -32,7 +32,7 @@
 
 <style>
 	section {
-		margin-top: 150px;
+		margin-top: 50px;
 		display: flex;
 		justify-content: space-between;
 		gap: 60px;
@@ -64,8 +64,34 @@
 		opacity: 100%;
 		transition: all 0.5s ease-out;
 	}
-	.slidein {
+	.slidetext {
 		transform: translateX(0);
 		transition: all 0.5s ease-out;
+	}
+
+	@media (max-width: 1200px) {
+		img {
+			width: 50%;
+			height: 100%;
+		}
+	}
+
+	@media (max-width: 1000px) {
+		section {
+			display: block;
+		}
+		img {
+			float: left;
+			margin-right: 20px;
+		}
+		div {
+			display: block;
+		}
+	}
+
+	@media (max-width: 386px) {
+		h1 {
+			font-size: 35px;
+		}
 	}
 </style>

@@ -4,7 +4,7 @@ import Button from './Button.astro'
 
 <article class="portfolio">
 	<h1>Portfolio</h1>
-	<div class="container">
+	<div class="container1">
 		<div class="tab-container">
 			<div class="tab-filter-container">
 				<li class="filter-btn active" data-tab="ux-cph">UX Copenhagen</li>
@@ -15,8 +15,10 @@ import Button from './Button.astro'
 			<div class="tab-filter-item-container">
 				<div class="tab-item ux-cph select_tab">
 					<div>
-						<Button tekst="Se sitet" />
-						<Button tekst="GitHub" />
+						<div class="knapper">
+							<Button tekst="Se sitet" />
+							<Button tekst="GitHub" />
+						</div>
 						<p>
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
 							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
@@ -38,10 +40,10 @@ import Button from './Button.astro'
 					<video src="/video/uxcph.mov"></video>
 				</div>
 				<div class="tab-item dh">
-					<div>
+					<div class="knapper">
 						<Button tekst="Se sitet" />
 						<Button tekst="GitHub" />
-						<p>
+						<p class="tekst">
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, perferendis eum a
 							vero quam error adipisci illum voluptatem consequuntur nihil, dignissimos veniam fuga
 							nostrum alias odit voluptas, quaerat accusantium necessitatibus.
@@ -71,14 +73,21 @@ import Button from './Button.astro'
 		transform: rotateY(180deg);
 		backface-visibility: hidden;
 		transition: all 1s ease-out;
+		width: 100%;
+	}
+	.knapper {
+		display: flex;
+		width: fit-content;
+		gap: 15px;
 	}
 
 	.flip {
 		transition: all 1s ease-out;
 		transform: rotateY(0);
 	}
-	.container {
+	.container1 {
 		margin-top: 30px;
+		min-width: 100%;
 	}
 	.tab-filter-container {
 		display: flex;
@@ -86,6 +95,8 @@ import Button from './Button.astro'
 	}
 
 	.filter-btn {
+		justify-content: center;
+		flex-grow: 1;
 		margin-left: 1px;
 		outline: 1px solid #fff;
 		color: white;
@@ -101,17 +112,26 @@ import Button from './Button.astro'
 		border: 1px solid #fff;
 		position: relative;
 		overflow: hidden;
+		min-height: 400px;
 	}
 	.tab-item {
-		display: grid;
-		grid-template-columns: 2fr 3fr;
+		display: flex;
+		flex-wrap: wrap;
 		gap: 50px;
 		padding: 50px;
 		width: 100%;
-		height: 480px;
+		height: 100%;
 		position: absolute;
 		transform: translateY(120%);
 		transition: transform 0.5s ease-in-out;
+	}
+
+	.tab-item p {
+		justify-self: center;
+	}
+
+	video {
+		max-width: 30%;
 	}
 
 	.tab-item.select_tab {
@@ -132,13 +152,8 @@ import Button from './Button.astro'
 			button.classList.add('active')
 
 			tab_items.forEach((tab) => {
-				tabContainer.style.height = tab.scrollHeight + 'px'
 				tab.classList.toggle('select_tab', tab.classList.contains(select_tab))
 			})
 		})
-	})
-
-	tab_items.forEach((tab) => {
-		tabContainer.style.height = tab.scrollHeight + 'px'
 	})
 </script>

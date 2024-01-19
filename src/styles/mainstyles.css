@@ -10,16 +10,7 @@
 	--h2-web: 40px;
 	--h3-web: 30px;
 	--copy-web: 20px;
-	--link-web: 30px;
-
-	--h1-tablet: 65px;
-	--h2-tablet: 30px;
-	--h3-tablet: 16px;
-	--copy-tablet: 15px;
-	--link-tablet: 40px;
-
-	--h1-mobil: 40px;
-	--link-mobil: 16px;
+	--link-web: 25px;
 
 	/*Font*/
 
@@ -89,4 +80,44 @@ a {
 	font-size: var(--link-web);
 	color: var(--text-color);
 	font-weight: bold;
+}
+
+@media (max-width: 1150px) {
+	h1 {
+		font-size: 50px;
+	}
+
+	.slidein {
+		line-height: 65px;
+		margin-right: 5%;
+	}
+}
+
+@media (max-width: 1000px) {
+	h2 {
+		font-size: 30px;
+	}
+	h3 {
+		font-size: 25px;
+	}
+}
+@media (max-width: 767px) {
+	main {
+		margin: 0 20px;
+	}
+	h1 {
+		font-size: 40px;
+	}
+
+	h2 {
+		font-size: 25px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+	p {
+		font-size: 16px;
+		line-height: 25px;
+	}
 }

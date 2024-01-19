@@ -19,6 +19,8 @@ import Contact from '../components/Contact.astro'
 	</body>
 </html>
 
+<style></style>
+
 <script>
 	const aboutimg = document.querySelector('.aboutimg')
 	const abouttekst = document.querySelector('.abouttekst')
@@ -32,19 +34,19 @@ import Contact from '../components/Contact.astro'
 	function scrollFunction() {
 		if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
 			aboutimg.classList.add('show')
-			abouttekst.classList.add('slidein')
+			abouttekst.classList.add('slidetext')
 		} else {
 			aboutimg.classList.remove('show')
-			abouttekst.classList.remove('slidein')
+			abouttekst.classList.remove('slidetext')
 		}
 
-		if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
+		if (document.body.scrollTop > 850 || document.documentElement.scrollTop > 850) {
 			skills.classList.add('show')
 		} else {
 			skills.classList.remove('show')
 		}
 
-		if (document.body.scrollTop > 2350 || document.documentElement.scrollTop > 2350) {
+		if (document.body.scrollTop > 2150 || document.documentElement.scrollTop > 2150) {
 			port.classList.add('flip')
 		} else {
 			port.classList.remove('flip')
@@ -55,8 +57,8 @@ import Contact from '../components/Contact.astro'
 		window.addEventListener('scroll', () => {
 			let value = window.scrollY
 
-			element.style.translate = -value + '%'
-			element2.style.translate = value + '%'
+			element.style.translate = -value / 3 + '%'
+			element2.style.translate = value / 3 + '%'
 		})
 	}
 </script>
