@@ -2,7 +2,7 @@
 import Button from './Button.astro'
 ---
 
-<section class="portfolio">
+<section class="portfolio" id="port">
 	<h1>Portfolio</h1>
 	<div class="tabcontainer">
 		<h3 class="tabs active" data-tab="ux">UX Copenhagen</h3>
@@ -114,6 +114,10 @@ import Button from './Button.astro'
 	}
 
 	@media (max-width: 850px) {
+		.tabs {
+			font-size: 18px;
+			font-weight: 300;
+		}
 		.tabindhold {
 			grid-template-columns: 1fr;
 			place-items: start;
@@ -133,8 +137,19 @@ import Button from './Button.astro'
 	}
 
 	@media (max-width: 600px) {
+		.tabs {
+			padding: 5px 10px;
+		}
+		.tabindhold {
+			padding: 20px;
+		}
 		article {
 			height: 550px;
+		}
+	}
+	@media (max-width: 400px) {
+		article {
+			height: 480px;
 		}
 	}
 </style>

@@ -2,15 +2,24 @@
 
 ---
 
-<section>
+<nav>
 	<h2>Portfolio.</h2>
-	<article>
-		<a href="/#">Om mig</a><a href="/#">Skills</a><a href="/#">Portfolio</a><a href="/#">Kontakt</a>
+	<article class="navdispno">
+		<a class="links" href="#abt">Om mig</a><a class="links" href="#skill">Skills</a><a
+			class="links"
+			href="#port">Portfolio</a
+		><a class="links" href="#cont">Kontakt</a>
 	</article>
-</section>
+	<div id="burger">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</nav>
 
 <style>
-	section {
+	nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -39,9 +48,149 @@
 		transition: all 0.3s;
 	}
 
-	@media (max-width: 850px) {
-		section {
+	#burger {
+		display: none;
+	}
+	@media (min-width: 501px) and (max-width: 850px) {
+		article {
+			position: absolute;
+			top: -1px;
+			right: 0;
+			width: 300px;
+			padding: 110px 70px 50px 0px;
+			border-bottom-left-radius: 20px;
+			border: 1px solid #fff;
+			z-index: 10;
+			align-items: flex-end;
+			flex-direction: column;
+			gap: 10px;
+			background-color: var(--background-color-light);
+			animation-name: slidein_kf;
+			animation-duration: 0.8s;
+			animation-fill-mode: forwards;
+			animation-timing-function: ease-in-out;
+		}
+
+		@keyframes slidein_kf {
+			from {
+				transform: translateY(-100%);
+			}
+			to {
+				transform: translateX(0);
+			}
+		}
+		a {
+			font-size: 30px;
+		}
+		.navdispno {
 			display: none;
+		}
+
+		/*BURGER MENU*/
+
+		#burger {
+			display: block;
+			width: 50px;
+			height: 60px;
+			position: relative;
+			transition: 0.5s ease-in-out;
+			z-index: 11;
+			margin: 10px 20px;
+		}
+
+		#burger span {
+			display: block;
+			position: absolute;
+			height: 5px;
+			width: 100%;
+			background: var(--link);
+			transition: 1s ease-in-out;
+		}
+
+		#burger span:nth-child(1) {
+			top: 10px;
+		}
+
+		#burger span:nth-child(2),
+		#burger span:nth-child(3) {
+			top: 25px;
+		}
+
+		#burger span:nth-child(4) {
+			top: 40px;
+		}
+
+		#burger.open span:nth-child(1) {
+			top: 15px;
+			width: 0%;
+			left: 50%;
+		}
+
+		#burger.open span:nth-child(2) {
+			transform: rotate(45deg);
+			top: 26px;
+		}
+
+		#burger.open span:nth-child(3) {
+			transform: rotate(-45deg);
+			top: 26px;
+		}
+
+		#burger.open span:nth-child(4) {
+			top: 15px;
+			width: 0%;
+			left: 50%;
+		}
+	}
+
+	@media (max-width: 500px) {
+		article {
+			border: 1px solid #fff;
+			border-radius: 20px;
+			position: fixed;
+			margin: 0 12px;
+			left: 0;
+			bottom: 20px;
+			z-index: 10;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: var(--background-color-light);
+			min-width: 95%;
+			min-height: 60px;
+		}
+
+		a {
+			font-size: 20px;
+		}
+		#burger {
+			display: none;
+		}
+		.navdispno {
+			display: flex;
 		}
 	}
 </style>
+
+<script>
+	const ikon = document.querySelector('#burger')
+	const disp = document.querySelector('article')
+	const links = document.querySelectorAll('.links')
+
+	ikon.addEventListener('click', openClose)
+	links.forEach((link) => {
+		link.addEventListener('click', openClose)
+	})
+
+	function openClose() {
+		ikon.classList.toggle('open')
+		const ikonShown = ikon.classList.contains('open')
+		if (ikonShown) {
+			ikon.classList.add('open')
+			disp.classList.remove('navdispno')
+		} else {
+			ikon.classList.remove('open')
+			disp.classList.add('navdispno')
+		}
+	}
+</script>
