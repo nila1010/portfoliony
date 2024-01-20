@@ -7,7 +7,7 @@ import Button from './Button.astro'
 	<div class="container">
 		<div class="containerinfo">
 			<img src="/logo/phone.svg" alt="Phone logo" />
-			<p class="kontakt">31 25 58 28</p>
+			<a class="kontakt" href="tlf:31255828">31 25 58 28</a>
 		</div>
 		<div class="containerinfo">
 			<img src="/logo/mail.svg" alt="E-mail logo" />
@@ -56,6 +56,15 @@ import Button from './Button.astro'
 
 			a {
 				font-size: 20px;
+			}
+
+			a[href^='tel'] {
+				color: inherit !important;
+				text-decoration: none !important;
+				font-size: inherit !important;
+				font-family: inherit !important;
+				font-weight: inherit !important;
+				line-height: inherit !important;
 			}
 		}
 	</style>
