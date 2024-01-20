@@ -32,4 +32,16 @@ const { logo, alt, title, tekst } = Astro.props
 			height: 300px;
 		}
 	}
+
+	@media (max-width: 500px) {
+		article {
+			flex-direction: row;
+			flex-wrap: wrap;
+			height: fit-content;
+		}
+
+		h3 {
+			align-self: center;
+		}
+	}
 </style>
