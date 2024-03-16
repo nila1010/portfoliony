@@ -5,14 +5,14 @@ import Button from './Button.astro'
 <section class="portfolio" id="portfolio">
 	<h1>Portfolio</h1>
 	<div class="tabcontainer">
-		<h3 class="tabs active" data-tab="ux">UX Copenhagen</h3>
+		<h3 class="tabs active" data-tab="consulting">Consulting</h3>
+		<h3 class="tabs" data-tab="ux">UX Copenhagen</h3>
+		<h3 class="tabs" data-tab="ca">CA Akasse</h3>
 		<h3 class="tabs" data-tab="tbd">The Barking Dog</h3>
 		<h3 class="tabs" data-tab="dh">Decore Hair</h3>
-		<h3 class="tabs" data-tab="ca">CA Akasse</h3>
-		<h3 class="tabs" data-tab="spot">Spotify</h3>
 	</div>
 	<article>
-		<div class="tabindhold ux selected">
+		<div class="tabindhold ux">
 			<div class="indhold">
 				<div class="knapper">
 					<Button link="https://uxcph.netlify.app" tekst="Se sitet" />
@@ -71,16 +71,16 @@ import Button from './Button.astro'
 			</div>
 			<img src="/caakasse.webp" alt="CA Akasse preview" />
 		</div>
-		<div class="tabindhold spot">
+		<div class="tabindhold consulting selected">
 			<div class="indhold">
 				<div class="knapper">
-					<Button link="https://nilaspotify.netlify.app" tekst="Se sitet" />
-					<Button link="https://github.com/nila1010/spotify" tekst="GitHub" />
+					<Button link="https://consultingfigma.netlify.app/" tekst="Se sitet" />
+					<Button link="https://github.com/nila1010/consulting_template" tekst="GitHub" />
 				</div>
-				<h3>Genskabelse af Spotify</h3>
-				<p>Øvelse i brug af astro, hvor jeg har genskab dele af Spotify.</p>
+				<h3>Desing ud fra Figma</h3>
+				<p>Øvelse i at kode et figma desing, jeg ikke selv har lavet med fokus på css.</p>
 			</div>
-			<img src="/spotify.webp" alt="Spotify preview" />
+			<img src="/consulting_figma.webp" alt="consulting preview" />
 		</div>
 	</article>
 </section>
