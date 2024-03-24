@@ -92,8 +92,11 @@ import Button from './Button.astro'
 		backface-visibility: hidden;
 	}
 
-	h3:hover {
-		color: var(--link);
+	h3 {
+		transition: all 0.5s ease-out;
+		&:hover {
+			color: var(--link);
+		}
 	}
 
 	.flip {
