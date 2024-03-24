@@ -92,6 +92,10 @@ import Button from './Button.astro'
 		backface-visibility: hidden;
 	}
 
+	h3:hover {
+		color: var(--link);
+	}
+
 	.flip {
 		transition: all 1s ease-out;
 		transform: rotateY(0);
@@ -154,6 +158,10 @@ import Button from './Button.astro'
 	.active {
 		background-color: var(--link);
 		color: var(--background-color);
+
+		&:hover {
+			color: var(--background-color);
+		}
 	}
 
 	@media (max-width: 850px) {

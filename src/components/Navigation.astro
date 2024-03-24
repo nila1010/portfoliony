@@ -8,7 +8,9 @@
 		<a class="links" href="#about">Om mig</a><a class="links" href="#skills">Skills</a><a
 			class="links"
 			href="#portfolio">Portfolio</a
-		><a class="links" href="#contact">Kontakt</a>
+		>
+		<a class="links" href="/#">GitHub</a>
+		<a class="links" href="#contact">Kontakt</a>
 	</article>
 	<div id="burger">
 		<span></span>
@@ -148,16 +150,18 @@
 			border: 1px solid #fff;
 			border-radius: 20px;
 			position: fixed;
-			margin: 0 12px;
+			margin: 0 6px;
+			padding: 0 6px;
 			left: 0;
 			bottom: 20px;
 			z-index: 10;
 			display: flex;
-			justify-content: center;
+			justify-content: space-around;
+			gap: 12px;
 			align-items: center;
 			background-color: var(--background-color-light);
-			min-width: 95%;
 			min-height: 60px;
+			min-inline-size: 95%;
 		}
 
 		a {
