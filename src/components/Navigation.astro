@@ -4,14 +4,13 @@
 
 <nav>
 	<h2>Portfolio.</h2>
-	<article class="navdispno">
-		<a class="links" href="#about">Om mig</a><a class="links" href="#skills">Skills</a><a
-			class="links"
-			href="#portfolio">Portfolio</a
-		>
-		<a class="links" href="https://github.com/nila1010/">GitHub</a>
-		<a class="links" href="#contact">Kontakt</a>
-	</article>
+	<ul class="navdispno">
+		<li><a class="links" href="#about">Om mig</a></li>
+		<li><a class="links" href="#skills">Skills</a></li>
+		<li><a class="links" href="#portfolio">Portfolio</a></li>
+		<li><a class="links" href="https://github.com/nila1010/">GitHub</a></li>
+		<li><a class="links" href="#contact">Kontakt</a></li>
+	</ul>
 	<div id="burger">
 		<span></span>
 		<span></span>
@@ -28,7 +27,7 @@
 		margin: 20px 50px;
 	}
 
-	article {
+	ul {
 		display: flex;
 		gap: 30px;
 	}
@@ -54,7 +53,7 @@
 		display: none;
 	}
 	@media (min-width: 501px) and (max-width: 850px) {
-		article {
+		ul {
 			position: absolute;
 			top: -1px;
 			right: 0;
@@ -146,7 +145,7 @@
 	}
 
 	@media (max-width: 500px) {
-		article {
+		ul {
 			border: 1px solid #fff;
 			border-radius: 20px;
 			position: fixed;
