@@ -95,13 +95,6 @@ import Button from './Button.astro'
 		backface-visibility: hidden;
 	}
 
-	h3 {
-		transition: all 0.5s ease-out;
-		&:hover {
-			color: var(--link);
-		}
-	}
-
 	.flip {
 		transition: all 1s ease-out;
 		transform: rotateY(0);
@@ -121,6 +114,10 @@ import Button from './Button.astro'
 		font-size: 25px;
 		padding: 5px 25px;
 		cursor: pointer;
+		transition: all 0.5s ease-out;
+		&:hover {
+			color: var(--link);
+		}
 	}
 
 	article {
